@@ -1,3 +1,1 @@
-let num: number[] = [1, 23, 4, 5]
-
-console.log(num)
+let person: [string, number] = ['OLuyemi', 29]
