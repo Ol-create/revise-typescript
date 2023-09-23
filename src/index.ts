@@ -4,5 +4,5 @@ let isPresent: boolean = true;
 //score is type of any
 let score;
 
-const enum Size { small = 1, medium, large }
-let mySize: Size = Size.medium 
+const enum Size { small = 2, medium, large }
+let mySize: Size = Size.medium
