@@ -1,8 +1,8 @@
-// const small = 1;
-// const medium = 2;
-// const large = 3;
-
-const enum Size { Small = 1, Medium, Large }
-
-let mySize: Size = Size.Medium
-console.log(mySize)
+function addSum(numA: number, numB: number = 50):number {
+    
+    if (numA > 50)
+        return numA + numB
+    return numB
+}
+ 
+console.log(addSum(2, 3))
