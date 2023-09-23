@@ -2,6 +2,6 @@
 // const medium = 2;
 // const large = 3;
 
-enum Size { Small = 1, Medium, Large }
+const enum Size { Small = 1, Medium, Large }
 
 console.log(Size.Medium)
