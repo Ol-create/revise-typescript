@@ -1,1 +1,3 @@
-let age: number = 31;
+let num: number[] = [1, 23, 4, 5]
+
+console.log(num)
