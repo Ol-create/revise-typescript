@@ -4,4 +4,5 @@
 
 const enum Size { Small = 1, Medium, Large }
 
-console.log(Size.Medium)
+let mySize: Size = Size.Medium
+console.log(mySize)
