@@ -1,8 +1,9 @@
 "use strict";
-function addSum(numA, numB = 50) {
-    if (numA > 50)
-        return numA + numB;
-    return numB;
-}
-console.log(addSum(2, 3));
+let employee = {
+    id: 1,
+    employeeName: "Oluyemi",
+    retire: (date) => {
+        console.log(date);
+    }
+};
 //# sourceMappingURL=index.js.map

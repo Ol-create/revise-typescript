@@ -1,8 +1,7 @@
-function addSum(numA: number, numB: number = 50):number {
-    
-    if (numA > 50)
-        return numA + numB
-    return numB
+let employee: { id: number, employeeName: string, retire: (date: Date) => void } = {
+    id: 1,
+    employeeName: "Oluyemi",
+    retire: (date: Date) => {
+        console.log(date)
+    }
 }
- 
-console.log(addSum(2, 3))
