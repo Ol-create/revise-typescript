@@ -1,14 +1,8 @@
-type Draggable = {
-    drag: () => void
-}
+//Literal (Specific | Exact)
 
-type Resizable = {
-    resize: () => void
-}
+type Quantity = 50 | 100;
 
-type UIWget = Draggable & Resizable;
+type Metric = 'cm' | 'mm'
 
-let textBox: UIWget = {
-    drag: () => { },
-    resize: () => {}
-}
+let unit: Metric = 'mm'
+let payment: Quantity = 50
