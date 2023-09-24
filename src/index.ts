@@ -1,8 +1,7 @@
-//Literal (Specific | Exact)
+function greet(name: string | null | undefined): string {
+    if (name)
+        return `Hello ${name}!`;
+    return 'Hola!';
+}
 
-type Quantity = 50 | 100;
-
-type Metric = 'cm' | 'mm'
-
-let unit: Metric = 'mm'
-let payment: Quantity = 50
+console.log(greet(''))
