@@ -1,11 +1,10 @@
-type Employee = {
-    id: number, employeeName: string, retire: (date: Date) => void
+function kgToGs(weight: string | number): number {
+    //Narrowing
+    if (typeof weight === 'number')
+        return weight * 1000;
+    else
+        return parseInt(weight) * 1000
 }
 
-let employee: Employee = {
-    id: 1,
-    employeeName: "Oluyemi",
-    retire: (date: Date) => {
-        console.log(date)
-    }
-}
+kgToGs(10)
+kgToGs('10kg')
