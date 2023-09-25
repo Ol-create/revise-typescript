@@ -13,17 +13,24 @@ class Account {
         this._balance += amount
 
     }
-    getBalance(): number {
+    get balance(): number {
         return this._balance
     }
 
-    private calculateTax(): {
-
+    set balance(value: number) {
+        if (value < 0) 
+            throw new Error("Invalid balance")
+        this._balance = value
     }
+
+    // private calculateTax(): {
+       
+    // }
 }
 
 let account = new Account(1, 'Oluyemi', 100)
 // let modifyBalance = (account.balance = 6);
 console.log(account)
-console.log(account.getBalance())
+console.log(account.balance)
+console.log('New balance = ', account.balance = 300)
 console.log('Is account an instance of Account: ', (account instanceof Account))
