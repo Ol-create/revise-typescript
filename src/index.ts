@@ -1,21 +1,5 @@
-interface Calender {
-    name: string;
-    addEvent(): void;
-    removeEvent(): void;
+class KeyValuePair<K, V> {
+    constructor(public key:K, public value:V) {}
 }
 
-interface GoogleClender extends Calender {
-    syn(): void;
-}
-
-class CloudCarlender implements Calender {
-    // name: string;
-    constructor(public name: string) {}
-    addEvent(): void {
-        throw new Error("Method not implemented.");
-    }
-    removeEvent(): void {
-        throw new Error("Method not implemented.");
-    }
-
-}
+let pair = new KeyValuePair<number, string>(1, 'one')

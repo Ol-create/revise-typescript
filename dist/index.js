@@ -1,13 +1,9 @@
 "use strict";
-class CloudCarlender {
-    constructor(name) {
-        this.name = name;
-    }
-    addEvent() {
-        throw new Error("Method not implemented.");
-    }
-    removeEvent() {
-        throw new Error("Method not implemented.");
+class KeyValuePair {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
+let pair = new KeyValuePair(1, 'one');
 //# sourceMappingURL=index.js.map
