@@ -11,4 +11,8 @@ class Account {
         this.balance += amount;
     }
 }
+let account = new Account(1, 'Oluyemi', 100);
+console.log(account);
+console.log(account.balance);
+console.log('Is account an instance of Account: ', (account instanceof Account));
 //# sourceMappingURL=index.js.map
