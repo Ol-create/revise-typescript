@@ -1,6 +1,7 @@
-// Type assertion
-// let phone = document.getElementById('phone') as HTMLInputElement
+function render(document: unknown) {
+    if (typeof document === 'string')
+        document.length;
 
-let phone = <HTMLInputElement> document.getElementById('phone')
-
-phone.value
+    // document.fly();
+    // document.sleep()
+}

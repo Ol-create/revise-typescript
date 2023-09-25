@@ -1,4 +1,6 @@
 "use strict";
-let phone = document.getElementById('phone');
-phone.value;
+function render(document) {
+    if (typeof document === 'string')
+        document.length;
+}
 //# sourceMappingURL=index.js.map
