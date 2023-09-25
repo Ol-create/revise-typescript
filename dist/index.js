@@ -1,9 +1,11 @@
 "use strict";
-class KeyValuePair {
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
+class ArrayUltis {
+    static wrapInArray(value) {
+        return [value];
     }
 }
-let pair = new KeyValuePair(1, 'one');
+let number = ArrayUltis.wrapInArray(1);
+console.log(number);
+let word = ArrayUltis.wrapInArray('Oluyemi');
+console.log(word);
 //# sourceMappingURL=index.js.map
