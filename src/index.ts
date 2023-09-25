@@ -1,25 +1,29 @@
-class Rider {
-    private static _activeRide: number = 0
+class Person {
+    constructor(
+        public firstName: string,
+        public lastName: string
+    ){}
 
-    start() {
-        Rider._activeRide++
+    get fullName() {
+        return this.firstName + " " + this.lastName
     }
 
-    stop() {
-        Rider._activeRide--
-    }
-
-    static get activeRide() {
-        return Rider._activeRide
+    walk() {
+        console.log('')
     }
 }
 
-let rider1 = new Rider
+class Student extends Person {
+    constructor(public studentId: number, firstName: string, lastName: string) {
+        super(firstName, lastName)
+    }
 
-let rider2 = new Rider
+    test() {
+        console.log("Talking")
+    }
+}
 
-rider1.start()
-rider2.stop()
 
-console.log(Rider.activeRide)
-// console.log(Rider._activeRide);
+let student = new Student(1, 'Paul', 'Oluyemi')
+
+console.log(student.fullName)
