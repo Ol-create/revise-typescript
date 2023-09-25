@@ -1,7 +1,19 @@
 "use strict";
-class seatAssignment {
+class Rider {
+    start() {
+        Rider._activeRide++;
+    }
+    stop() {
+        Rider._activeRide--;
+    }
+    static get activeRide() {
+        return Rider._activeRide;
+    }
 }
-let seat = new seatAssignment;
-seat.A = 'Oluyemi';
-seat['B'] = 'Paul';
+Rider._activeRide = 0;
+let rider1 = new Rider;
+let rider2 = new Rider;
+rider1.start();
+rider2.stop();
+console.log(Rider.activeRide);
 //# sourceMappingURL=index.js.map
