@@ -1,14 +1,13 @@
 "use strict";
-class Shape {
-    constructor(color) {
-        this.color = color;
+class CloudCarlender {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent() {
+        throw new Error("Method not implemented.");
     }
 }
-class Circle extends Shape {
-    render() {
-        console.log(this.color);
-    }
-}
-let circle = new Circle("Blue");
-circle.render();
 //# sourceMappingURL=index.js.map

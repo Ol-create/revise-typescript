@@ -1,15 +1,21 @@
-abstract class Shape {
-    constructor(public color: string) { }
-    
-    abstract render(): void;
+interface Calender {
+    name: string;
+    addEvent(): void;
+    removeEvent(): void;
 }
 
-class Circle extends Shape {
-    override render(): void {
-        console.log(this.color)
+interface GoogleClender extends Calender {
+    syn(): void;
+}
+
+class CloudCarlender implements Calender {
+    // name: string;
+    constructor(public name: string) {}
+    addEvent(): void {
+        throw new Error("Method not implemented.");
     }
+    removeEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+
 }
-
-let circle = new Circle("Blue")
-
-circle.render()
