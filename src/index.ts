@@ -13,17 +13,12 @@ class Person {
     }
 }
 
-class Student extends Person {
-    constructor(public studentId: number, firstName: string, lastName: string) {
-        super(firstName, lastName)
-    }
-
-    test() {
-        console.log("Talking")
-    }
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor " + super.fullName;
+  }
 }
 
+let teacher = new Teacher("John", "Smith")
 
-let student = new Student(1, 'Paul', 'Oluyemi')
-
-console.log(student.fullName)
+console.log(teacher.fullName)

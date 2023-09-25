@@ -11,15 +11,11 @@ class Person {
         console.log('');
     }
 }
-class Student extends Person {
-    constructor(studentId, firstName, lastName) {
-        super(firstName, lastName);
-        this.studentId = studentId;
-    }
-    test() {
-        console.log("Talking");
+class Teacher extends Person {
+    get fullName() {
+        return "Professor " + super.fullName;
     }
 }
-let student = new Student(1, 'Paul', 'Oluyemi');
-console.log(student.fullName);
+let teacher = new Teacher("John", "Smith");
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map
