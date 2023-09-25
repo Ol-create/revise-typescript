@@ -1,13 +1,20 @@
-class ArrayUltis {
-    static wrapInArray<T>(value: T) {
-        return [value]
-    }
+interface Result<T> {
+    data: T | null,
+    error: string | null,
 }
 
-let number = ArrayUltis.wrapInArray(1)
+function fetch<T>(url: string): Result<T>{
+  return {data: null, error: null}
+}
 
-console.log(number)
+interface User {
+    username: string
+}
 
-let word = ArrayUltis.wrapInArray('Oluyemi');
+interface Product {
+    title: string
+}
 
-console.log(word)
+let result = fetch<User>('url')
+
+result.data?.username
