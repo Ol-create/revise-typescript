@@ -14,7 +14,13 @@ function Component(options: ComponentOptions) {
 
 }
 
-@Component
-class ProfileComponent({seletor: "#homePage"}) {
+function Pipe(constructor: Function) {
+    console.log("Pipe decorator called!")
+    constructor.prototype.pipe = true;
+}
+
+// @Component({ selector: "#homePage" })
+@Pipe
+class ProfileComponent() {
 
 }
