@@ -3,21 +3,32 @@ interface Product {
     price: number
 }
 
-class Store<T> {
-    protected _objects: T[] = [];
-
-    addObj(obj: T): void {
-        this._objects.push(obj)
-    }
-    // If T is Product
-    //Keyof T => 'name' | 'price'
-    find(property: keyof T, value: unknown): T | undefined {
-        return this._objects.find(obj => obj[property] === value)
-    }
+type ReadOlyProduct = {
+    readonly [K in keyof Product]: Product[K]
 }
 
-let store = new Store<Product>()
+let product: ReadOlyProduct = {
+    name: "a",
+    price: 1
+}
 
-store.addObj({ name: "a", price: 1 })
-store.find("name", "a")
-store.find("price", 1)
+//so we can't modified its value
+// can't change product.name = "Bitter Tea"
+
+//Here is a more concise way of doing this
+type ReadOnly<T> = {
+    readonly [K in keyof T]: T[K]
+}
+
+let product2: ReadOnly<Product> = {
+    name: "a",
+    price: 1
+}
+
+type Optional<T> = {
+    [K in keyof T]? : T[K]
+}
+
+type Nullable<T> = {
+    [K in keyof T]: T[K] | null
+}

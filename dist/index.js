@@ -1,8 +1,10 @@
 "use strict";
-var _a;
-function fetch(url) {
-    return { data: null, error: null };
-}
-let result = fetch('url');
-(_a = result.data) === null || _a === void 0 ? void 0 : _a.username;
+let product = {
+    name: "a",
+    price: 1
+};
+let product2 = {
+    name: "a",
+    price: 1
+};
 //# sourceMappingURL=index.js.map
