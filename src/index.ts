@@ -1,26 +1,17 @@
-type ComponentOptions = {
-    selector: string
-}
+function Log(target: any, methodName: string, descriptor: PropertyDecorator) {
+    const original = descriptor.value as Function;
 
-function Component(options: ComponentOptions) {
-    return (constructor: Function) => {
-        console.log("Component decorator called!");
-        constructor.prototype.options = options
-        constructor.prototype.uniqueId = Date.now()
-        constructor.prototype.insertInDOM = () => {
-            console.log("Inserting in the DOM")
-        }
+    descriptor.value = function (...args: any) {
+        console.log("Before")
+        original.call(this, ...args)
+        console.log("After")
     }
-
 }
 
-function Pipe(constructor: Function) {
-    console.log("Pipe decorator called!")
-    constructor.prototype.pipe = true;
-}
+class Person {
 
-// @Component({ selector: "#homePage" })
-@Pipe
-class ProfileComponent() {
-
+    @Log
+    say(message: string) {
+        console.log("Hello " + message)
+    }
 }
