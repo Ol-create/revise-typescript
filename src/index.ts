@@ -1,27 +1,18 @@
-function MinLength(length: number) {
-    return (target: any, propertyName: string) => {
-        let value: String;
-        const descriptor: PropertyDescritor = {
-            get() {return value}
-            set(newValue: string) {
-                if (newValue.length < length)
-                    throw new Error(`${propertyName} should be atleast ${length} characters long`)
-                value = newValue
-          }
-        }
-        Object.defineProperties(target, propertyName, descriptor);
-    }
+type WatchedParameter = {
+    methodName: string,
+    parameterIndex: number
 }
 
-
-class User {
-
-    @MinLength(4)
-    password: string
-    constructor(password: string) {
-        this.password = password
-    }
+const watchedParameter: WatchedParameter[] = [];
+function Watch(target: any, methodName: string, parameterIndex: number) {
+    watchedParameter.push({
+        methodName,
+        parameterIndex,
+   })
 }
 
-let user = new User("123");
-console.log(user.password)
+class Vehicle {
+    move(@Watch speed: number) {}
+}
+
+console.log(watchedParameter)
