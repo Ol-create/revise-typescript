@@ -1,13 +1,20 @@
-function Component(constructor: Function) {
-    console.log("Component decorator called!")
+type ComponentOptions = {
+    selector: string
+}
 
-    constructor.prototype.uniqueId = Date.now()
-    constructor.prototype.insertInDOM = () => {
-        console.log("Inserting the component in the DOM")
+function Component(options: ComponentOptions) {
+    return (constructor: Function) => {
+        console.log("Component decorator called!");
+        constructor.prototype.options = options
+        constructor.prototype.uniqueId = Date.now()
+        constructor.prototype.insertInDOM = () => {
+            console.log("Inserting in the DOM")
+        }
     }
+
 }
 
 @Component
-class ProfileComponent {
-    
+class ProfileComponent({seletor: "#homePage"}) {
+
 }
